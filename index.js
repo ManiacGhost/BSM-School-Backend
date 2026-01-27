@@ -3,6 +3,7 @@ const cors = require('cors');
 require('dotenv').config();
 
 const galleryRoutes = require('./routes/gallery');
+const contactRoutes = require('./routes/contact');
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
 // Routes
 app.use('/api/gallery', galleryRoutes);
+app.use('/api/contact', contactRoutes);
 
 // Health check
 app.get('/health', (req, res) => {
